@@ -1,0 +1,11 @@
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\bin\Debug\netcoreapp2.2\NautecTechTest.deps.json
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\bin\Debug\netcoreapp2.2\NautecTechTest.runtimeconfig.json
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\bin\Debug\netcoreapp2.2\NautecTechTest.runtimeconfig.dev.json
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\bin\Debug\netcoreapp2.2\NautecTechTest.dll
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.csprojAssemblyReference.cache
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.csproj.CoreCompileInputs.cache
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.AssemblyInfoInputs.cache
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.AssemblyInfo.cs
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\bin\Debug\netcoreapp2.2\NautecTechTest.pdb
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.dll
+C:\Users\WINDOWS 10\Desktop\NautecTechTest\NautecTechTest\obj\Debug\netcoreapp2.2\NautecTechTest.pdb
