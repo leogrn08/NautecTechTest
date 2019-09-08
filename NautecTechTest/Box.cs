@@ -7,7 +7,7 @@ namespace NautecTechTest
 {
     /// <summary>
     /// Classe que representa cada um dos objetos formatados em json
-    /// do arquivo "boxes.data"
+    /// do arquivo "boxes.data".
     /// </summary>
     public class Box
     {
@@ -21,14 +21,9 @@ namespace NautecTechTest
         public int p2y { get; set; }
 
 
-        public Box()
-        {
-
-        }
-
         /// <summary>
         /// Construtor da classe Box que recebe uma linha de json e converte nos
-        /// atributos do objeto
+        /// atributos do objeto.
         /// </summary>
         /// <param name="json"></param>
         public Box(string json)

@@ -77,19 +77,27 @@ namespace NautecTechTest
         }
 
         /// <summary>
-        /// Função que analisa as variações do eixox e do eixoy recebidas e retorna a
-        /// ação correspondente.
+        /// Função que analisa as listas de movimentos no eixo y
+        /// de cada pessoa retorna sua ação principal.
         /// </summary>
         /// <param name="deltax"></param>
         /// <param name="deltay"></param>
         /// <returns></returns>
-        public static string identificaAcaoPessoa(int deltax, int deltay)
+        public static string identificaAcaoPessoa(List<int> eixoY)
         {
+            int deltay = eixoY[eixoY.Count - 1] - eixoY[0];
+            Console.WriteLine("variação do eixo Y: " + deltay);
             string acao = "Ação não identificada";
             if (deltay < 100 && deltay >-100)
             {
-                if (deltax > 100 || deltax < -100)
-                    acao = "Passou na frente da loja";
+                acao = "Passou na frente da loja";
+                foreach(int y in eixoY)
+                {
+                    if(y > 400)
+                    {
+                        acao = "Passou por dentro da loja";
+                    }
+                }
             }else if(deltay > 150)
             {
                 acao = "Entrou na loja";
@@ -97,18 +105,18 @@ namespace NautecTechTest
             {
                 acao = "Saiu da loja";
             }
+            Console.WriteLine("Ação principal: " + acao);
             return acao;
         }
 
         /// <summary>
         /// Função que recebe uma lista de objetos Box, utiliza a função 
         /// indentificaTodosIds()para obter os person_id existentes, guarda todas
-        /// as posições x e y de um mesmo person_id em listas e depois insere a 
-        /// diferença do último valor de cada lista com o primeiro (respectivamente
-        /// a última posição da pessoa e a primeira) na função identificaAcaoPessoa()
-        /// para obter sua ação, criando uma pessoa com o person_id e ação correspondentes
-        /// para adicioná-la na lista de pessoas e após todos os person_id serem 
-        /// verificados a lista de pessoas é retornada.
+        /// as posições y de um mesmo person_id em uma lista e depois a insere
+        /// na função identificaAcaoPessoa() para obter sua ação, criando uma
+        /// pessoa com o person_id e ação correspondentespara adicioná-la na
+        /// lista de pessoas e após todos os person_id serem verificados 
+        /// a lista de pessoas é retornada.
         /// </summary>
         /// <param name="boxes"></param>
         /// <returns></returns>
@@ -117,19 +125,16 @@ namespace NautecTechTest
             List<Person> persons = new List<Person>();
             List<string> personIds = identificaTodosPersonIds(boxes);
             foreach (string personId in personIds) {
-                Console.WriteLine(personId);
-                List<int> x = new List<int>(), y = new List<int>();
+                Console.WriteLine("person_id: " + personId);
+                List<int> y = new List<int>();
                 foreach (Box box in boxes)
                 {   
                     if(box.person_id == personId)
                     {
-                        x.Add(box.x);
                         y.Add(box.y);
                     }
                 }
-                Console.WriteLine(x[x.Count - 1] - x[0]);
-                Console.WriteLine(y[y.Count - 1] - y[0]);
-                Person person = new Person(personId, identificaAcaoPessoa(x[x.Count-1] - x[0], y[y.Count-1] - y[0]));
+                Person person = new Person(personId, identificaAcaoPessoa(y));
                 persons.Add(person);
             }
             return persons;
